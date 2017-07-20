@@ -1,2 +1,2 @@
 # myPro
-my own projects pritise
+个人
