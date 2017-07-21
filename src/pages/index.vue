@@ -1,14 +1,15 @@
 <template>
 	<div>
-		<h1 class="logo">cnodejs Api Test</h1>
-		<ul class="list">
-			<li v-for="item in lists" v-text="item.title"></li>
-		</ul>
+		<sub-list></sub-list>
 	</div>
 </template>
 
 <script>
+	import subList from "@/components/Subjects"
 	export default{
+		components:{
+			'subList':subList
+		},
 		data(){
 			return {
 				lists:[{
