@@ -46,16 +46,20 @@
 <style>
 	.footer-nav{
 		font-size:1.8rem;
-		
+		position: fixed;
+		background: red;
+		width: 100%;
+		display: flex;
 	}
 	.nav-item{
 		background:lightgray;
 		 float:left;
-		 width:24%;
 		 border:solid 1px white;
 		 padding:5px;
+		   flex: 1;
 	}
 	.active{
 		background:forestgreen;
 	}
+ 
 </style>
