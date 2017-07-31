@@ -12,11 +12,17 @@ export default new Router({
       path: '/',
       component: discovery
     },{
-    path: '/content',
+    path: '/shelf',
     component: content
+  },{
+    path: '/thoughts',
+    component: index
   },{
     path: '/discovery',
     component: discovery
-  },
+  },{
+    path: '/person',
+    component: discovery
+  }
   ]
 })

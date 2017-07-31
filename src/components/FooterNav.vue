@@ -1,10 +1,10 @@
 <template>
 	<div class="footer-nav">
 		<div v-for="(item,index) in items" :class="[commonClass,item.active ? activeClass : '']" v-on:click="navClickEvent(items,index)">
-			<span class="nav-txt" >
+			 <router-link :to="item.src"><span class="nav-txt" >
 				<img :src="item.active?item.src_active:item.src_grey" /><br/>
 				{{item.text}}
-			</span>
+			</span> </router-link>
 		</div>
 	</div>
 </template>
@@ -30,21 +30,25 @@
 					text:'发现',
 					src_active:compassBlue,
 					src_grey:compassGrey,
+					src:'/discovery',
 					active:true
 				},{
 					text:'书架',
 					src_active:bookshelfBlue,
 					src_grey:bookshelfGrey,
+					src:'/shelf',
 					active:false
 				},{
 					text:'想法',
 					src_active:dialogBlue,
 					src_grey:dialogGrey,
+					src:'/thoughts',
 					active:false
 				},{
 					text:'个人',
 					src_active:mineBlue,
 					src_grey:mineGrey,
+					src:'/person',
 					active:false
 				}]
 			}
@@ -81,7 +85,14 @@
 		 color:#cdcdcd;
 		 padding:5px;
 	}
-	.active{
+	.nav-item a{
+		 color:#cdcdcd;
+	}
+	.nav-item,.active a{
 		 color:#1296db;
+	}
+	
+	a{
+		text-decoration: none;
 	}
 </style>

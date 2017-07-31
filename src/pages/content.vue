@@ -1,17 +1,14 @@
 <template>
 	<div>
 		<list-books :books="books"></list-books>
-		<footer-nav></footer-nav>
 	</div>
 </template>
 
 <script>
 	import listBooks from "@/components/Books"
-	import footerNav from "@/components/FooterNav"
 	export default {
 		components: {
 			'listBooks': listBooks,
-			'footerNav':footerNav
 		},
 		data() {
 			return {

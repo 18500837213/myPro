@@ -1,6 +1,6 @@
 <template>
 	<div class="sub-list">
-		{{data}}
+		<div class="lis">{{data}}</div>
 	</div>
 </template>
 
@@ -13,4 +13,7 @@
 </script>
 
 <style>
+ .lis{
+ 	height:50%;
+ }
 </style>

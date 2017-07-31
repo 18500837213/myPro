@@ -1,12 +1,17 @@
 <template>
   <div id="app">
     <router-view></router-view>
+    <footer-nav></footer-nav>
   </div>
 </template>
 
 <script>
+import footerNav from '@/components/FooterNav';
 export default {
-  name: 'app'
+  name: 'app',
+  components:{
+			'footerNav':footerNav,
+	}
 }
 </script>
 
@@ -14,7 +19,11 @@ export default {
 html,body{
 	height:100%;
 }
-
+*{
+		margin: 0;
+		padding:0;	
+}
+	
 #app {
   font-family: 'Avenir', Helvetica, Arial, sans-serif;
   -webkit-font-smoothing: antialiased;
