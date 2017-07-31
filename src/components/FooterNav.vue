@@ -1,11 +1,13 @@
 <template>
 	<div class="footer-nav">
-		<div v-for="(item,index) in items" :class="[commonClass,item.active ? activeClass : '']" v-on:click="navClickEvent(items,index)">
-			 <router-link :to="item.src"><span class="nav-txt" >
-				<img :src="item.active?item.src_active:item.src_grey" /><br/>
-				{{item.text}}
-			</span> </router-link>
-		</div>
+		<router-link v-for="(item,index) in items"  :to="item.src">
+			<div :class="[commonClass,item.active ? activeClass : '']" v-on:click="navClickEvent(items,index)">
+				<span class="nav-txt">
+					<img :src="item.active?item.src_active:item.src_grey" /><br/>
+					{{item.text}}
+				</span>
+			</div>
+		</router-link>
 	</div>
 </template>
 
@@ -20,79 +22,81 @@
 	import dialogGrey from '@/images/dialog_grey.png'
 	import mineBlue from '@/images/mine_blue.png'
 	import mineGrey from '@/images/mine_grey.png'
- 
-	export default{
-		data:function(){
+
+	export default {
+		data: function() {
 			return {
-				commonClass:'nav-item',
-        		activeClass:'active',
-				items:[{
-					text:'发现',
-					src_active:compassBlue,
-					src_grey:compassGrey,
-					src:'/discovery',
-					active:true
-				},{
-					text:'书架',
-					src_active:bookshelfBlue,
-					src_grey:bookshelfGrey,
-					src:'/shelf',
-					active:false
-				},{
-					text:'想法',
-					src_active:dialogBlue,
-					src_grey:dialogGrey,
-					src:'/thoughts',
-					active:false
-				},{
-					text:'个人',
-					src_active:mineBlue,
-					src_grey:mineGrey,
-					src:'/person',
-					active:false
+				commonClass: 'nav-item',
+				activeClass: 'active',
+				items: [{
+					text: '发现',
+					src_active: compassBlue,
+					src_grey: compassGrey,
+					src: '/discovery',
+					active: true
+				}, {
+					text: '书架',
+					src_active: bookshelfBlue,
+					src_grey: bookshelfGrey,
+					src: '/shelf',
+					active: false
+				}, {
+					text: '想法',
+					src_active: dialogBlue,
+					src_grey: dialogGrey,
+					src: '/thoughts',
+					active: false
+				}, {
+					text: '个人',
+					src_active: mineBlue,
+					src_grey: mineGrey,
+					src: '/person',
+					active: false
 				}]
 			}
 		},
-		methods:{
-			navClickEvent:function(items,index){
+		methods: {
+			navClickEvent: function(items, index) {
 				/*默认切换类的动作*/
-				items.forEach(function(el){
+				items.forEach(function(el) {
 					el.active = false;
 				});
 				items[index].active = true;
 				/*开放用户自定义的接口*/
-				this.$emit('navClickEvent',items,index);
+				this.$emit('navClickEvent', items, index);
 			}
-    }
+		}
 	}
 </script>
 
 <style>
-	img{
-		 height: 2rem;
-		 margin-top:0.5rem ;
-	}
-	.footer-nav{
-		width:100%;
-		display: flex;
-		position:fixed; 
-		bottom:0;
-		box-shadow: 1px 1px 10px #888888;
-	}
-	.nav-item{
-		 display:inline-block;
-		 flex:1;
-		 color:#cdcdcd;
-		 padding:5px;
-	}
-	.nav-item a{
-		 color:#cdcdcd;
-	}
-	.nav-item,.active a{
-		 color:#1296db;
+	img {
+		height: 2rem;
+		margin-top: 0.5rem;
 	}
 	
-	a{
-		text-decoration: none;
+	.footer-nav {
+		width: 100%;
+		display: flex;
+		position: fixed;
+		bottom: 0;
+		box-shadow: 1px 1px 10px #888888;
 	}
+	
+	.footer-nav a{
+		display: inline-block;
+		flex: 1;
+		color: #cdcdcd;
+		padding: 5px;
+			text-decoration: none;
+	}
+	
+	a .nav-item{
+		color: #cdcdcd;
+	}
+	
+	.nav-item,.active .nav-txt{
+		color: #1296db;
+	}
+
 </style>
