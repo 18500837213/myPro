@@ -24,17 +24,25 @@
 		 	},
 		 	touchMove(e){
 		 		let touches = e.touches[0];
+		 		let clientWidth=this.$el.parentNode.clientWidth;
     			let X = touches.pageX - this.pageX;
-    			this.flag=X<0;
+    			if(Math.abs(X)<clientWidth/3){
+    				this.flag=0
+    			}else{
+    				this.flag=X<0?-1:1;
+    			}
     		 	let container=this.$refs.container;
     		 	let index=e.target.attributes.order.value;
-    		 	var width=index*this.$el.parentNode.clientWidth;
+    		 	let width=index*clientWidth;
  		 		container.style.webkitTransform='translate3d('+(X-width)+'px, 0, 0)';
+ 		 		container.style.removeProperty("webkitTransition");
+ 		 		container.style.removeProperty("transition");
 		 	},
 		 	touchEnd(e){
 		 		let container=this.$refs.container;
 		 		let index=e.target.attributes.order.value;
-		 		index=this.flag?(-index-1):(-index+1);
+		 		index=-index+this.flag;
+		 		
 		 		let len =e.target.attributes.len.value;
 		 	 	if(index>0){
 		 	 		index=0;
