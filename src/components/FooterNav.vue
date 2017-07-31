@@ -69,8 +69,8 @@
 
 <style>
 	img{
-		 height: 3rem;
-		
+		 height: 2rem;
+		 margin-top:0.5rem ;
 	}
 	.footer-nav{
 		width:100%;
