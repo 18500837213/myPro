@@ -18,13 +18,6 @@
 		},
 		 methods: {
 		 	touchStart(e) {
-//		 		var container=this.$refs.container;
-//		 		container.style.webkitTransform='translate3d(-100%, 0, 0)';
-//		 		container.style.webkitTransition='300ms';
-//		 		container.style.transition='300ms';
-		 	//	 el && (el.style.webkitTransform = 'translate3d(' + x + (unit || 'px') + ',0,0)')
-// 				 alert(1)
-//        		this.$refs.box[5].style.display='none';
 				let touches = e.touches[0];
 				//记录落点
     			this.pageX = touches.pageX;
@@ -39,7 +32,6 @@
  		 		container.style.webkitTransform='translate3d('+(X-width)+'px, 0, 0)';
 		 	},
 		 	touchEnd(e){
-		 		debugger
 		 		let container=this.$refs.container;
 		 		let index=e.target.attributes.order.value;
 		 		index=this.flag?(-index-1):(-index+1);
