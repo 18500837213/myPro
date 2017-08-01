@@ -1,7 +1,7 @@
 <template>
 	<div class="li-books">
 			<div v-for="book in books" class="book">
-                	<img   :src="book.icon"/><br/>
+                	<img  :src="book.icon"/><br/>
                 	<span>{{book.name}}</span>
 			</div>
 	</div>

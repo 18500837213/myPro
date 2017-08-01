@@ -1,6 +1,6 @@
 import Vue from 'vue'
 import Router from 'vue-router'
-import index from '@/pages/index'
+import thoughts from '@/pages/thoughts'
 import shelf from '@/pages/shelf'
 import discovery from '@/pages/discovery'
 
@@ -16,7 +16,7 @@ export default new Router({
     component: shelf
   },{
     path: '/thoughts',
-    component: index
+    component: thoughts
   }
   ]
 })

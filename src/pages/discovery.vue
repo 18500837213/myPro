@@ -1,5 +1,5 @@
 <template>
-	<div class="container">
+	<div class="container-discovery">
 		<flow-box></flow-box>
 	</div>
 </template>
@@ -13,7 +13,7 @@
 	}
 </script>
 <style>
-	 .container{
+	 .container-discovery{
     width:100%;
     overflow-y:scroll;
     top:0;
