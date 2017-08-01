@@ -2,7 +2,7 @@
 	<div>
 		<shelf-header></shelf-header>
 		<div class="container-shelf">
-		<list-books :books="books"></list-books>
+			<list-books :books="books"></list-books>
 		</div>
 	</div>
 </template>

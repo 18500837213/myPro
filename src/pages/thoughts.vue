@@ -1,7 +1,9 @@
 <template>
 	<div>
 		<tho-header></tho-header>
-		<thoughts></thoughts>
+		<div class="container-thoughts">
+			<thoughts></thoughts>
+		</div>
 	</div>
 </template>
 
@@ -22,4 +24,14 @@
 </script>
 
 <style>
+.container-thoughts{
+		width: 100%;
+		overflow-y: scroll;
+		top: 0;
+		position: absolute;
+		z-index: 10;
+		top:5rem;
+		bottom: 5rem;
+		_height: 100%
+}
 </style>
