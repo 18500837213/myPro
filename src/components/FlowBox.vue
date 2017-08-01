@@ -1,8 +1,8 @@
 <template>
  	<div class="flow-box">
- 		<div class="container" @touchstart="touchStart" @touchmove="touchMove" @touchend="touchEnd" ref="container">
- 			<div class="box" v-for="num in list" ref="box" :order="num" :len="list.length">
- 				{{num}}
+ 		<div class="flow" @touchstart="touchStart" @touchmove="touchMove" @touchend="touchEnd" ref="container">
+ 			<div class="box" v-for="(item,index) in list" ref="box" :order="index" :len="list.length">
+ 				{{item}}
  			</div>
  		</div>
  	</div>
@@ -13,7 +13,6 @@
 		data:function(){
 			return {
 				list:[0,1,2,3,4,5,6]
-		
 			}
 		},
 		 methods: {
@@ -68,11 +67,11 @@
 
 <style>
 	.flow-box{
-		height:80%;
+		height:100%;
 		width:100%;
 		overflow: hidden;
 	}
-	.container{
+	.flow-box>.flow{
 		position:relative;
         width:100%;
         height:100%;
@@ -90,8 +89,5 @@
         height:100%;
        /* overflow:hidden;*/
         background-color:#c8c8c8
-	}
-	.transform{
-		-webkit-transform: translate3d(-100%, 0px, 0px); -webkit-transition: 300ms; transition: 300ms;
 	}
 </style>

@@ -14,6 +14,12 @@
 </script>
 <style>
 	 .container{
-	 	width:100%;
+    width:100%;
+    overflow-y:scroll;
+    top:0;
+    position:absolute;
+    z-index:10;
+    bottom:0px;
+    _height:100%
 	 }
 </style>

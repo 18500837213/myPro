@@ -1,13 +1,9 @@
 <template>
 	<div class="li-books">
-		<ul>
-			<li v-for="book in books">
-			  <div class="icon">
-                	<img width="57" height="57" :src="book.icon"/>
-                	<h1>{{book.name}}</h1>
-              </div>
-			</li>
-		</ul>
+			<div v-for="book in books" class="book">
+                	<img   :src="book.icon"/><br/>
+                	<span>{{book.name}}</span>
+			</div>
 	</div>
 </template>
 
@@ -20,17 +16,24 @@
 </script>
 
 <style>
-	li{
-		display:block;
-		list-style: none;
-		border-bottom: solid 1px lightgray;
-		text-align: left;
+ 
+	/*.li-books{
+		overflow-y:scroll;
+		height:100%;
+	}*/
+	.li-books{
+		padding-top: 1rem;
+		-moz-column-count:3; /* Firefox */
+		-webkit-column-count:3; /* Safari and Chrome */
+		column-count:3;
+		font-size: .5rem;
 	}
-	li h1{
-		vertical-align: middle;
-		 display:inline-block;
+	.li-books  .book{
+		margin-bottom:0.5rem;
+		margin:1px;
+		height:8rem;
 	}
-	li img{
-		vertical-align: middle;
+	.li-books .book img{
+		height:6rem;
 	}
 </style>

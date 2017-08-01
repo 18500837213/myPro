@@ -32,7 +32,7 @@
 					text: '发现',
 					src_active: compassBlue,
 					src_grey: compassGrey,
-					src: '/discovery',
+					src: '/',
 					active: true
 				}, {
 					text: '书架',
@@ -50,7 +50,7 @@
 					text: '个人',
 					src_active: mineBlue,
 					src_grey: mineGrey,
-					src: '/person',
+					src: '/',
 					active: false
 				}]
 			}
@@ -70,17 +70,22 @@
 </script>
 
 <style>
-	img {
+	.footer-nav img {
 		height: 2rem;
 		margin-top: 0.5rem;
 	}
 	
 	.footer-nav {
-		width: 100%;
+		height:5rem;
+    	width:100%;
+    	position:absolute;
+   		z-index:200;
+    	bottom:0;
+    	text-align:center;
 		display: flex;
-		position: fixed;
-		bottom: 0;
 		box-shadow: 1px 1px 10px #888888;
+		background: white;
+		font-size: 0.5rem;
 	}
 	
 	.footer-nav a{

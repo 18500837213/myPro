@@ -1,7 +1,7 @@
 import Vue from 'vue'
 import Router from 'vue-router'
 import index from '@/pages/index'
-import content from '@/pages/content'
+import shelf from '@/pages/shelf'
 import discovery from '@/pages/discovery'
 
 Vue.use(Router)
@@ -13,16 +13,10 @@ export default new Router({
       component: discovery
     },{
     path: '/shelf',
-    component: content
+    component: shelf
   },{
     path: '/thoughts',
     component: index
-  },{
-    path: '/discovery',
-    component: discovery
-  },{
-    path: '/person',
-    component: discovery
   }
   ]
 })

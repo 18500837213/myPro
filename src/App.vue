@@ -1,5 +1,6 @@
 <template>
   <div id="app">
+  	<div class="header"></div>
     <router-view></router-view>
     <footer-nav></footer-nav>
   </div>
@@ -18,7 +19,11 @@ export default {
 <style>
 html,body{
 	height:100%;
+	overflow:hidden;
 }
+::-webkit-scrollbar{
+ 				 display:none;
+	}
 *{
 		margin: 0;
 		padding:0;	
@@ -31,5 +36,7 @@ html,body{
   text-align: center;
   color: #2c3e50;
   height:100%;
+  
 }
+
 </style>
