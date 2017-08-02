@@ -3,7 +3,7 @@
 		 <div class="first-div">
 			<span class="left">关注的人</span>
 			<span class="right">精选想法</span>
-			<img src="../images/quill.svg" /> 
+			<img src="../images/icons/quill.svg" /> 
 		</div>
 	</div>
 </template>

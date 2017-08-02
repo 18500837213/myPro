@@ -1,22 +1,21 @@
 <template>
-	<div class="shelf-header">
+	<div class="setting-header">
 		<div class="first-div">
-			<div class="left"><img src="../images/icons/search.svg" /></div>
-			<div class="center">书架 </div>
-			<div class="right"><a>书城</a></div>
+			<div class="left"><img src="../images/icons/email.svg" /></div>
+			<div class="center">陈冬冬 </div>
+			<div class="right"><img src="../images/icons/setting.svg" /></div>
 		</div>
 	</div>
 </template>
 
 <script>
-	
-	export default {
+	export default{
 		
 	}
 </script>
 
 <style>
-	.shelf-header{
+	.setting-header{
 		position: absolute;
 		z-index:5;
 		width:100%;
@@ -24,25 +23,28 @@
 		height:5rem;
 		line-height:5rem;
 	}
-	.shelf-header .first-div{
+	.setting-header .first-div{
 		display: flex;
 		vertical-align: middle;
 	}
-	.shelf-header .left{
+	.setting-header .left{
 		  flex:1;
 		  display: inline;
 		  text-align: left;
 		  margin-left: 1rem;
 		  
 	}
-	.shelf-header .left img{
+	.setting-header .left img{
 		   height:1rem;
 	}
-	.shelf-header .center{
+	.setting-header .right img{
+		   height:1rem;
+	}
+	.setting-header .center{
 		 flex:1
 		  
 	}
-	.shelf-header .right{
+	.setting-header .right{
 		text-align: right;
 		margin-right: 1rem;
 		flex:1

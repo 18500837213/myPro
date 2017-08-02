@@ -12,16 +12,16 @@
 </template>
 
 <script>
-	import discoveryBlue from '@/images/discovery_blue.png'
-	import discoveryGrey from '@/images/discovery_grey.png'
-	import bookshelfBlue from '@/images/bookshelf_blue.png'
-	import bookshelfGrey from '@/images/bookshelf-grey.png'
-	import compassBlue from '@/images/compass_blue.png'
-	import compassGrey from '@/images/compass_grey.png'
-	import dialogBlue from '@/images/dialog_blue.png'
-	import dialogGrey from '@/images/dialog_grey.png'
-	import mineBlue from '@/images/mine_blue.png'
-	import mineGrey from '@/images/mine_grey.png'
+	import discoveryBlue from '@/images/icons/discovery_blue.png'
+	import discoveryGrey from '@/images/icons/discovery_grey.png'
+	import bookshelfBlue from '@/images/icons/bookshelf_blue.png'
+	import bookshelfGrey from '@/images/icons/bookshelf-grey.png'
+	import compassBlue from '@/images/icons/compass_blue.png'
+	import compassGrey from '@/images/icons/compass_grey.png'
+	import dialogBlue from '@/images/icons/dialog_blue.png'
+	import dialogGrey from '@/images/icons/dialog_grey.png'
+	import mineBlue from '@/images/icons/mine_blue.png'
+	import mineGrey from '@/images/icons/mine_grey.png'
 
 	export default {
 		data: function() {
@@ -50,7 +50,7 @@
 					text: '个人',
 					src_active: mineBlue,
 					src_grey: mineGrey,
-					src: '/',
+					src: '/setting',
 					active: false
 				}]
 			}

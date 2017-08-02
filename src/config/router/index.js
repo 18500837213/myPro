@@ -3,7 +3,7 @@ import Router from 'vue-router'
 import thoughts from '@/pages/thoughts'
 import shelf from '@/pages/shelf'
 import discovery from '@/pages/discovery'
-
+import setting from '@/pages/setting'
 Vue.use(Router)
 
 export default new Router({
@@ -17,6 +17,9 @@ export default new Router({
   },{
     path: '/thoughts',
     component: thoughts
+  },{
+  	path:'/setting',
+  	component:setting
   }
   ]
 })
