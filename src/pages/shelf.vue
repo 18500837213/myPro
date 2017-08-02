@@ -72,7 +72,6 @@
 	.container-shelf{
 		width: 100%;
 		overflow-y: scroll;
-		top: 0;
 		position: absolute;
 		z-index: 10;
 		top:5rem;
