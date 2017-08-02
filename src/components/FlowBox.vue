@@ -1,8 +1,8 @@
 <template>
  	<div class="flow-box">
  		<div class="flow" @touchstart="touchStart" @touchmove="touchMove" @touchend="touchEnd" ref="container">
- 			<div class="box" v-for="(item,index) in list" ref="box" :order="index" :len="list.length">
- 				<div v-if="item.type==0" class="type0" :order="index" :len="list.length">
+ 			<div class="box" v-for="(item,index) in list" ref="box" >
+ 				<div v-if="item.type==0" class="type0">
  					<img :src="item.icon" class="book-icon"/>
  					<p></p>
  					<div class="title">{{item.title}}</div>
@@ -39,19 +39,19 @@
 					header:header1
 				},{
 					type:0,icon:book2,
-					title:"十亿个为什么",
+					title:"飘",
 					header:header2
 				},{
 					type:0,
 					icon:book1,
-					title:"十万个为什么",
+					title:"斗破苍穹",
 					header:header2
 				},{
-					type:0,icon:book1,title:"十万个为什么",header:header3
+					type:0,icon:book1,title:"中国近代史",header:header3
 				},{
-					type:0,icon:book1,title:"十万个为什么",header:header2
+					type:0,icon:book1,title:"话语权",header:header2
 				},{
-					type:0,icon:book1,title:"十万个为什么",header:header3
+					type:0,icon:book1,title:"泰戈尔全集",header:header3
 				}]
 			}
 		},
@@ -60,6 +60,10 @@
 				let touches = e.touches[0];
 				//记录落点
     			this.pageX = touches.pageX;
+    			//用于记录当前页
+    			if(!this.index){
+    				this.index=0;
+    			}
 		 	},
 		 	touchMove(e){
 		 		let touches = e.touches[0];
@@ -71,24 +75,24 @@
     				this.flag=X<0?-1:1;
     			}
     		 	let container=this.$refs.container;
-    		 	let index=e.target.attributes.order.value;
-    		 	let width=index*clientWidth;
+    		 	let width=this.index*clientWidth;
  		 		container.style.webkitTransform='translate3d('+(X-width)+'px, 0, 0)';
  		 		container.style.removeProperty("webkitTransition");
  		 		container.style.removeProperty("transition");
 		 	},
 		 	touchEnd(e){
 		 		let container=this.$refs.container;
-		 		let index=e.target.attributes.order.value;
+				let index = this.index;
 		 		index=-index+this.flag;
 		 		
-		 		let len =e.target.attributes.len.value;
+		 		let len = this.$data.list.length;
 		 	 	if(index>0){
 		 	 		index=0;
 		 	 	}
 		 	 	if(index<-len+1){
 		 	 		index=-len+1;
 		 	 	}
+		 	 	this.index=-index;
 		 		container.style.webkitTransform='translate3d('+index*100+'%, 0, 0)';
 		 		container.style.webkitTransition='300ms';
 		 		container.style.transition='300ms';
