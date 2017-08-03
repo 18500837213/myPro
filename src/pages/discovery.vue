@@ -13,13 +13,13 @@
 	}
 </script>
 <style>
-	 .container-discovery{
+	.container-discovery{
     width:100%;
     overflow-y:scroll;
     top:0;
     position:absolute;
     z-index:10;
-    bottom:0px;
+    bottom:4rem;
     _height:100%
 	 }
 </style>

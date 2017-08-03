@@ -1,11 +1,9 @@
 <template>
 	<div class="footer-nav">
-		<router-link v-for="(item,index) in items"  :to="item.src">
+		<router-link v-for="(item,index) in items"  :to="item.src" :key="item.id">
 			<div :class="[commonClass,item.active ? activeClass : '']" v-on:click="navClickEvent(items,index)">
-				<span class="nav-txt">
 					<img :src="item.active?item.src_active:item.src_grey" /><br/>
 					{{item.text}}
-				</span>
 			</div>
 		</router-link>
 	</div>
@@ -30,24 +28,28 @@
 				activeClass: 'active',
 				items: [{
 					text: '发现',
+					id:'bDiscovery',
 					src_active: compassBlue,
 					src_grey: compassGrey,
 					src: '/',
 					active: true
 				}, {
 					text: '书架',
+					id:'bShelf',
 					src_active: bookshelfBlue,
 					src_grey: bookshelfGrey,
 					src: '/shelf',
 					active: false
 				}, {
 					text: '想法',
+					id:'bThoughts',
 					src_active: dialogBlue,
 					src_grey: dialogGrey,
 					src: '/thoughts',
 					active: false
 				}, {
 					text: '个人',
+					id:'bSetting',
 					src_active: mineBlue,
 					src_grey: mineGrey,
 					src: '/setting',
@@ -56,7 +58,7 @@
 			}
 		},
 		methods: {
-			navClickEvent: function(items, index) {
+			navClickEvent(items, index) {
 				/*默认切换类的动作*/
 				items.forEach(function(el) {
 					el.active = false;
@@ -72,11 +74,10 @@
 <style>
 	.footer-nav img {
 		height: 2rem;
-		margin-top: 0.5rem;
 	}
 	
 	.footer-nav {
-		height:5rem;
+		height:4rem;
     	width:100%;
     	position:absolute;
    		z-index:200;
@@ -86,21 +87,22 @@
 		box-shadow: 1px 1px 10px #888888;
 		background: white;
 		font-size: 0.5rem;
+		line-height: 1rem;
 	}
 	
 	.footer-nav a{
 		display: inline-block;
 		flex: 1;
 		color: #cdcdcd;
-		padding: 5px;
-			text-decoration: none;
+		text-decoration: none;
 	}
 	
-	a .nav-item{
+	.footer-nav .nav-item{
+		margin-top: 0.5rem;
 		color: #cdcdcd;
 	}
 	
-	.nav-item,.active .nav-txt{
+	.footer-nav .active {
 		color: #1296db;
 	}
 

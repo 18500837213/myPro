@@ -25,7 +25,7 @@
 		position: absolute;
 		z-index: 10;
 		top: 5rem;
-		bottom: 5rem;
+		bottom: 4rem;
 		_height: 100%
 	}
 </style>

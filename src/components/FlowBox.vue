@@ -98,7 +98,7 @@
 		 		container.style.transition='300ms';
 		 	}
 		 },
-		 mounted:function(){
+		 mounted(){
 		 	let len=this.$refs.box.length;
 		 	let i=0;
 		 	for(i=0;i<len;i++){

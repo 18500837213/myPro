@@ -38,7 +38,7 @@
 <script>
 	import header1 from '@/images/headers/header001.jpg'
 	export default{
-		data:function(){
+		data(){
 			return {
 				info:{
 					icon:header1
